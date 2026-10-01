@@ -7,25 +7,29 @@ const stats = [
     value: "8.24",
     label: "CGPA",
     subtext: "Computer Science & Engg",
-    icon: GraduationCap
+    icon: GraduationCap,
+    accent: "text-sky-400 border-sky-500/30"
   },
   {
-    value: "11+",
+    value: "12+",
     label: "Projects",
     subtext: "Real-World Applications",
-    icon: FolderCode
+    icon: FolderCode,
+    accent: "text-emerald-400 border-emerald-500/30"
   },
   {
     value: "Full Stack",
-    label: "Development",
-    subtext: "MERN & Web Platforms",
-    icon: Code2
+    label: "Developer",
+    subtext: "MERN Stack & REST APIs",
+    icon: Code2,
+    accent: "text-indigo-400 border-indigo-500/30"
   },
   {
-    value: "AI",
-    label: "Application Development",
-    subtext: "LLMs, APIs & Workflows",
-    icon: Bot
+    value: "AI Application",
+    label: "Developer",
+    subtext: "Local LLMs & AI Tools",
+    icon: Bot,
+    accent: "text-amber-400 border-amber-500/30"
   }
 ];
 
@@ -38,12 +42,12 @@ export const QuickStats = () => {
             const Icon = stat.icon;
             return (
               <motion.div
-                key={stat.label}
+                key={stat.label + stat.value}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-300 flex flex-col justify-between group"
+                className={`p-6 rounded-2xl glass-card border flex flex-col justify-between group ${stat.accent}`}
               >
                 <div className="flex justify-between items-start mb-4">
                   <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white group-hover:bg-white group-hover:text-black transition-colors">

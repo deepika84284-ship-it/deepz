@@ -11,7 +11,7 @@
 
 Welcome to the official developer portfolio repository of **M Deepika** — Final-year B.E. Computer Science & Engineering student, **Full Stack Developer**, and **AI Application Developer**.
 
-This portfolio is engineered with a **cyber-dark developer aesthetic**, interactive 3D visualizations, smooth micro-interactions, responsive filter systems, and comprehensive project case studies showcasing **11 real-world applications**.
+This portfolio is engineered with a **cyber-dark developer aesthetic**, interactive 3D visualizations, smooth micro-interactions, responsive filter systems, and comprehensive project case studies showcasing **12 real-world applications**.
 
 ---
 
@@ -23,7 +23,7 @@ This portfolio is engineered with a **cyber-dark developer aesthetic**, interact
 - **Direct Resume Integration**: Instant download button pointing directly to verified [`Resume_M_DEEPIKA.pdf`](public/Resume_M_DEEPIKA.pdf).
 
 ### 2. 📊 **Quick Stats & About Me**
-- Highlights academic standing (**8.24 / 10 CGPA** at Mohamed Sathak Engineering College) alongside **11+ genuine projects** across Full Stack and AI Application domains.
+- Highlights academic standing (**8.24 / 10 CGPA** at Mohamed Sathak Engineering College) alongside **12+ genuine projects** across Full Stack and AI Application domains.
 
 ### 3. 🛠️ **Grouped Technical Skills & AI Toolstack**
 - **Frontend**: HTML5, CSS3, JavaScript (ES6+), React.js
@@ -33,15 +33,18 @@ This portfolio is engineered with a **cyber-dark developer aesthetic**, interact
 - **AI Tools & Platforms**: ChatGPT, Google Gemini, Claude, GitHub Copilot, Cursor, Ollama (Qwen2.5 7B), CodeRabbit, Snyk, DeepSource, Reviewpad, Perplexity, NotebookLM, Zapier, Gamma, Otter.ai
 - **AI Workflows**: Prompt Engineering, AI-assisted Development, AI Application Development, LLM Workflows, AI API Integration
 
-### 💻 **Featured Projects Showcase (11 Real Projects)**
+---
+
+### 💻 **Featured Projects Showcase (12 Real Projects)**
 
 | Project | Category | Key Highlights & Tech Stack |
 | :--- | :--- | :--- |
+| 🧵 **FabricFlow – Future of Fabric Commerce** | `MERN B2B Marketplace` | **Major Featured Project**: B2B textile marketplace connecting buyers and suppliers with Cloudinary image management, Razorpay payment gateway, and role-based JWT auth. *(React, Node, Express, MongoDB, Cloudinary, Razorpay)* |
 | 🛡️ **GuardianDrive AI** | `AI / Full Stack` | Real-time computer vision driver monitoring system detecting fatigue & ocular distraction to issue instantaneous audio/visual safety warnings. *(React, Node, Express, AI Detection APIs)* |
 | 🤖 **Luna** | `AI / Desktop` | Privacy-First Local AI Desktop Assistant running 100% offline powered by **Qwen2.5 7B** via **Ollama**. Zero subscription cost & zero data leakage. *(Electron, React, Node, Express, Ollama)* |
 | 💧 **AquaGuard AI** | `AI / Social Impact` | AI-driven water management platform predicting regional water shortages and detecting network leakages. *(React, Node, Express, MongoDB, Chart.js)* |
+| 🏎️ **Bike Race Arena** | `Full Stack / Game` | Web-based interactive racing game featuring 4-player simulation, coin collection, bike/outfit shop, and real-time Firestore leaderboards. *(React, Firebase, Firestore)* |
 | 🛒 **SafeCart** | `AI / Web App` | E-Commerce fraud detection platform evaluating seller credibility with an integrated AI Copilot for scam guidance. *(React, Node, Express, MongoDB, JWT)* |
-| 🏍️ **Bike Race Arena** | `Full Stack / Game` | Web-based interactive racing game featuring 4-player simulation, coin collection, bike/outfit shop, and real-time Firestore leaderboards. *(React, Firebase, Firestore)* |
 | 🛍️ **Ammu Store** | `Full Stack / E-Commerce` | E-commerce web platform with product photo albums, admin order dashboard, UPI payment verification, and order status tracking. *(React, Node, Express, MongoDB)* |
 | 🏙️ **Clean City** | `Full Stack / Civic-Tech` | Civic reporting web app enabling users to upload waste photos, tag locations, log in via Google Auth, and track complaint status. *(React, Firebase, Google Auth)* |
 | 📍 **NearbyXZ** | `Full Stack / Web App` | Locality-based discovery platform connecting users with local businesses and services using distance query processing. *(React, Node, Express, MongoDB, Geolocation API)* |

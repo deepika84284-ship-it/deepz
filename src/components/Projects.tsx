@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ExternalLink, Github, Sparkles, X, CheckCircle2, Eye, ArrowUpRight, Cpu, Layers, ShieldCheck, Gamepad2, Landmark, MapPin, Stethoscope, Sprout, Receipt } from 'lucide-react';
+import { ExternalLink, Github, Sparkles, X, CheckCircle2, Eye, ArrowUpRight, Cpu, Layers, ShieldCheck, ShoppingBag, Database, CreditCard, Image, Server, ArrowRight, UserCheck, BarChart3, Bell, Tag } from 'lucide-react';
 
 export interface ProjectItem {
   id: string;
@@ -16,6 +16,14 @@ export interface ProjectItem {
   purpose?: string;
   functionality?: string;
   features?: string[];
+  buyerFeatures?: string[];
+  supplierFeatures?: string[];
+  adminFeatures?: string[];
+  apiModules?: string[];
+  dbCollections?: string[];
+  uiHighlights?: string[];
+  techStackFrontend?: string[];
+  techStackBackend?: string[];
   technologies: string[];
   contribution?: string;
   context?: string;
@@ -26,13 +34,70 @@ export interface ProjectItem {
 
 const projects: ProjectItem[] = [
   {
+    id: "fabricflow",
+    title: "FabricFlow – The Future of Fabric Commerce",
+    category: "Full Stack / MERN / B2B E-Commerce",
+    filters: ["FULL STACK", "WEB"],
+    type: "B2B Textile Marketplace",
+    isAI: false,
+    isFeatured: true,
+    purpose: "FabricFlow is a modern B2B textile marketplace that connects textile buyers and suppliers through a single digital platform. It simplifies fabric discovery, product management, ordering, payments, and supplier management.",
+    problem: "Traditional textile buying often depends on offline communication, multiple suppliers, phone calls, and manual product/order management leading to operational friction and slow procurement cycles.",
+    solution: "FabricFlow brings textile buyers and suppliers together on one platform. Buyers can discover and purchase fabrics, while suppliers can digitally manage products, inventory, orders, and business information.",
+    buyerFeatures: [
+      "User Registration & Secure Login",
+      "Browse & Search Textile Catalog with Advanced Filters",
+      "Comprehensive Product Specifications & Details",
+      "Wishlist, Add to Cart & Sample Requests",
+      "Seamless Checkout & Online Payment (Razorpay)",
+      "Real-time Order Tracking & Status Flow",
+      "Product Reviews, Ratings & Buyer Dashboard"
+    ],
+    supplierFeatures: [
+      "Supplier Registration & Business Onboarding",
+      "Company Business Profile & Store Setup",
+      "Product Catalog CRUD (Add, Edit, Delete)",
+      "Cloudinary Image Storage & Management",
+      "Real-time Inventory Control & Low-Stock Alerts",
+      "Supplier Order Processing & Status Updates",
+      "Sales Revenue & Growth Analytics Dashboard"
+    ],
+    adminFeatures: [
+      "Unified Admin Platform Dashboard",
+      "Buyer & Supplier User Management",
+      "Supplier Verification & Approval Pipeline",
+      "Global Product & Category Management",
+      "Platform Statistics & Analytics Monitoring"
+    ],
+    apiModules: [
+      "/api/auth", "/api/products", "/api/orders", "/api/cart",
+      "/api/wishlist", "/api/reviews", "/api/categories", "/api/notifications"
+    ],
+    dbCollections: [
+      "Users", "Products", "Categories", "Orders", "Cart",
+      "Wishlist", "Reviews", "Notifications", "Coupons"
+    ],
+    uiHighlights: [
+      "Dark Luxury Visual Aesthetics",
+      "Glassmorphism & Custom Accents",
+      "Playfair Display + Inter Typography",
+      "Framer Motion Animations & Page Transitions",
+      "Responsive & Mobile-First Layout",
+      "Skeleton Loaders & Toast Notifications"
+    ],
+    techStackFrontend: ["React.js", "Vite", "Tailwind CSS", "Framer Motion", "Axios", "React Router", "React Hook Form", "Recharts", "Lucide React"],
+    techStackBackend: ["Node.js", "Express.js", "MongoDB", "Mongoose", "JWT Auth", "Bcrypt", "Cloudinary", "Multer", "Razorpay"],
+    technologies: ["MERN", "B2B", "E-Commerce", "JWT", "Razorpay", "Cloudinary", "MongoDB", "React.js", "Node.js", "Express.js"],
+    contribution: "Engineered full-stack architecture, constructed role-based JWT authentication middleware (Buyer/Supplier/Admin), built supplier analytics dashboard, and integrated Cloudinary image upload pipeline & Razorpay payment gateway.",
+    image: "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
     id: "guardiandrive",
     title: "GuardianDrive AI",
     category: "AI / Full Stack",
     filters: ["AI", "FULL STACK"],
     type: "AI Application",
     isAI: true,
-    isFeatured: true,
     problem: "Driver fatigue, drowsiness, and distraction lead to high risks of road hazards and fatal vehicular accidents.",
     solution: "An AI-assisted real-time driver monitoring web system that analyzes ocular keypoints and facial expressions to issue instant audio/visual safety warnings.",
     aiUsage: "Leveraged computer vision algorithms and real-time AI model evaluation to monitor ocular blinks, head orientation, and distraction levels.",
@@ -77,20 +142,6 @@ const projects: ProjectItem[] = [
     image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80"
   },
   {
-    id: "safecart",
-    title: "SafeCart",
-    category: "AI / Web Application",
-    filters: ["AI", "WEB", "FULL STACK"],
-    type: "Fraud Detection & Safety Platform",
-    isAI: true,
-    purpose: "Full-stack e-commerce safety platform helping users identify and avoid online shopping scams and suspicious online stores.",
-    functionality: "Evaluates seller credibility, analyzes suspicious store domains and transaction patterns, and provides real-time risk scores and Copilot guidance.",
-    aiUsage: "Integrated an AI Copilot feature for scam guidance and automated threat evaluation. Used ChatGPT & Google Gemini for AI-assisted development and debugging.",
-    technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT Auth", "Role-based Access"],
-    github: "https://github.com/deepika84284-ship-it/safecart",
-    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&q=80"
-  },
-  {
     id: "bikeracearena",
     title: "Bike Race Arena",
     category: "Full Stack / Interactive Web Game",
@@ -108,6 +159,20 @@ const projects: ProjectItem[] = [
     technologies: ["React.js", "JavaScript", "HTML", "CSS", "Firebase", "Firebase Authentication", "Firestore"],
     contribution: "Engineered game loop simulation, built canvas/DOM interactions, configured Firebase Auth, and set up Firestore real-time leaderboards.",
     image: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: "safecart",
+    title: "SafeCart",
+    category: "AI / Web Application",
+    filters: ["AI", "WEB", "FULL STACK"],
+    type: "Fraud Detection & Safety Platform",
+    isAI: true,
+    purpose: "Full-stack e-commerce safety platform helping users identify and avoid online shopping scams and suspicious online stores.",
+    functionality: "Evaluates seller credibility, analyzes suspicious store domains and transaction patterns, and provides real-time risk scores and Copilot guidance.",
+    aiUsage: "Integrated an AI Copilot feature for scam guidance and automated threat evaluation. Used ChatGPT & Google Gemini for AI-assisted development and debugging.",
+    technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT Auth", "Role-based Access"],
+    github: "https://github.com/deepika84284-ship-it/safecart",
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&q=80"
   },
   {
     id: "ammustore",
@@ -237,7 +302,7 @@ export const Projects = () => {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
-  const featuredProject = projects[0];
+  const featuredProject = projects[0]; // FabricFlow is Project #1
   
   const filteredProjects = projects.filter((proj) => {
     if (activeFilter === "ALL") return true;
@@ -261,7 +326,7 @@ export const Projects = () => {
           
           <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-sky-500/10 border border-sky-500/20 text-sky-300 font-mono text-xs font-semibold">
             <Sparkles className="w-4 h-4 text-sky-400" />
-            <span>11 Real-World Applications</span>
+            <span>12 Real-World Applications Showcase</span>
           </div>
         </div>
 
@@ -282,7 +347,7 @@ export const Projects = () => {
           ))}
         </div>
 
-        {/* FEATURED LARGE HERO PROJECT SHOWCASE (When filter is ALL) */}
+        {/* FEATURED MAJOR PRODUCT SHOWCASE: FABRICFLOW (When filter is ALL) */}
         {activeFilter === "ALL" && (
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
@@ -290,50 +355,50 @@ export const Projects = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             onClick={() => setSelectedProject(featuredProject)}
-            className="mb-12 group cursor-pointer rounded-2xl glass-panel border border-white/10 hover:border-sky-500/40 p-6 md:p-8 transition-all duration-300 shadow-2xl"
+            className="mb-12 group cursor-pointer rounded-2xl glass-panel border border-amber-500/30 hover:border-amber-400 p-6 md:p-8 transition-all duration-300 shadow-2xl bg-gradient-to-br from-amber-950/20 via-zinc-950 to-zinc-950"
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-7 relative aspect-[16/10] overflow-hidden rounded-xl bg-zinc-900">
+              <div className="lg:col-span-7 relative aspect-[16/10] overflow-hidden rounded-xl bg-zinc-900 border border-white/10">
                 <img 
                   src={featuredProject.image} 
                   alt={featuredProject.title}
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
                 />
-                <div className="absolute top-4 left-4 flex items-center gap-2">
-                  <span className="px-3 py-1.5 text-xs font-mono font-bold uppercase tracking-wider bg-sky-400 text-black rounded-lg flex items-center gap-1 shadow-lg">
-                    <Sparkles className="w-3.5 h-3.5" /> FEATURED PRODUCT
+                <div className="absolute top-4 left-4 flex items-center gap-2 flex-wrap">
+                  <span className="px-3 py-1.5 text-xs font-mono font-bold uppercase tracking-wider bg-amber-400 text-black rounded-lg flex items-center gap-1 shadow-lg">
+                    <ShoppingBag className="w-3.5 h-3.5" /> MAJOR MERN PROJECT
                   </span>
                   <span className="px-3 py-1.5 text-xs font-mono uppercase tracking-wider bg-black/80 backdrop-blur-md text-white border border-white/20 rounded-lg">
-                    {featuredProject.category}
+                    B2B Textile Marketplace
                   </span>
                 </div>
               </div>
 
               <div className="lg:col-span-5 space-y-5">
-                <div className="text-xs font-mono text-sky-400 font-semibold uppercase tracking-wider">
-                  AI & FULL STACK MONITORED SAFETY SYSTEM
+                <div className="text-xs font-mono text-amber-400 font-semibold uppercase tracking-wider flex items-center gap-2">
+                  <Layers className="w-4 h-4" /> B2B TEXTILE COMMERCE PLATFORM
                 </div>
                 
-                <h3 className="text-2xl sm:text-4xl font-display font-bold text-white group-hover:text-sky-300 transition-colors">
+                <h3 className="text-2xl sm:text-4xl font-display font-bold text-white group-hover:text-amber-300 transition-colors">
                   {featuredProject.title}
                 </h3>
 
                 <p className="text-sm text-zinc-300 leading-relaxed font-light">
-                  {featuredProject.solution}
+                  {featuredProject.purpose}
                 </p>
 
                 <div className="flex flex-wrap gap-2">
-                  {featuredProject.technologies.map((tech) => (
-                    <span key={tech} className="px-3 py-1 text-xs font-mono bg-white/5 border border-white/10 rounded-lg text-zinc-200">
+                  {featuredProject.technologies.slice(0, 6).map((tech) => (
+                    <span key={tech} className="px-3 py-1 text-xs font-mono bg-amber-500/10 border border-amber-500/20 rounded-lg text-amber-300 font-medium">
                       {tech}
                     </span>
                   ))}
                 </div>
 
                 <div className="pt-4 flex items-center gap-4">
-                  <button className="px-5 py-2.5 rounded-xl bg-white text-black font-bold text-xs uppercase tracking-widest hover:bg-sky-400 transition-colors flex items-center gap-2">
-                    <Eye className="w-4 h-4" /> View Case Study & Details <ArrowUpRight className="w-4 h-4" />
+                  <button className="px-5 py-2.5 rounded-xl bg-white text-black font-bold text-xs uppercase tracking-widest hover:bg-amber-400 transition-colors flex items-center gap-2">
+                    <Eye className="w-4 h-4" /> Explore FabricFlow <ArrowUpRight className="w-4 h-4" />
                   </button>
                 </div>
               </div>
@@ -409,7 +474,7 @@ export const Projects = () => {
                   )}
 
                   <div className="flex flex-wrap gap-1.5 mb-6">
-                    {project.technologies.map((tech) => (
+                    {project.technologies.slice(0, 5).map((tech) => (
                       <span key={tech} className="px-2.5 py-1 text-[11px] font-mono bg-white/5 border border-white/10 rounded-md text-zinc-300">
                         {tech}
                       </span>
@@ -460,7 +525,7 @@ export const Projects = () => {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ duration: 0.3 }}
-              className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-2xl glass-panel p-6 sm:p-8 text-white shadow-2xl border border-white/20"
+              className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl glass-panel p-6 sm:p-8 text-white shadow-2xl border border-white/20"
             >
               <button
                 onClick={() => setSelectedProject(null)}
@@ -474,6 +539,11 @@ export const Projects = () => {
                 <span className="px-3 py-1 text-xs font-mono uppercase tracking-wider bg-white/10 rounded-lg border border-white/20 text-zinc-300">
                   {selectedProject.category}
                 </span>
+                {selectedProject.id === "fabricflow" && (
+                  <span className="px-3 py-1 text-xs font-mono font-bold uppercase tracking-wider bg-amber-400 text-black rounded-lg flex items-center gap-1">
+                    <ShoppingBag className="w-3.5 h-3.5" /> MERN B2B MARKETPLACE
+                  </span>
+                )}
                 {selectedProject.isAI && (
                   <span className="px-3 py-1 text-xs font-mono font-bold uppercase tracking-wider bg-sky-400 text-black rounded-lg flex items-center gap-1">
                     <Sparkles className="w-3.5 h-3.5" /> AI Application
@@ -488,7 +558,51 @@ export const Projects = () => {
 
               <h2 className="text-2xl sm:text-4xl font-display font-bold mb-6 text-white">{selectedProject.title}</h2>
 
-              <div className="space-y-5 text-sm text-zinc-300 leading-relaxed font-light">
+              <div className="space-y-6 text-sm text-zinc-300 leading-relaxed font-light">
+                
+                {/* FABRICFLOW SPECIALIZED ARCHITECTURE DIAGRAM */}
+                {selectedProject.id === "fabricflow" && (
+                  <div className="p-5 rounded-xl bg-zinc-900/90 border border-amber-500/30 space-y-4">
+                    <div className="font-mono text-xs uppercase text-amber-400 font-bold flex items-center gap-2">
+                      <Layers className="w-4 h-4" /> System Architecture & Flow
+                    </div>
+                    
+                    <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 text-center text-xs font-mono">
+                      <div className="p-3 rounded-lg bg-white/5 border border-white/10">
+                        <div className="text-amber-400 font-bold">BUYERS / SUPPLIERS</div>
+                        <div className="text-[10px] text-zinc-400">Web Dashboard</div>
+                      </div>
+                      <div className="p-3 rounded-lg bg-sky-500/10 border border-sky-500/20">
+                        <div className="text-sky-300 font-bold">REACT FRONTEND</div>
+                        <div className="text-[10px] text-zinc-400">Vite & Tailwind</div>
+                      </div>
+                      <div className="p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/20">
+                        <div className="text-emerald-300 font-bold">EXPRESS / NODE API</div>
+                        <div className="text-[10px] text-zinc-400">REST Endpoints</div>
+                      </div>
+                      <div className="p-3 rounded-lg bg-indigo-500/10 border border-indigo-500/20">
+                        <div className="text-indigo-300 font-bold">MONGODB ATLAS</div>
+                        <div className="text-[10px] text-zinc-400">Mongoose Schemas</div>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs font-mono">
+                      <div className="p-2.5 rounded-lg bg-zinc-800/80 border border-white/10 flex items-center gap-2">
+                        <CreditCard className="w-4 h-4 text-emerald-400 shrink-0" />
+                        <div><strong className="text-white">Razorpay</strong>: Online Payments</div>
+                      </div>
+                      <div className="p-2.5 rounded-lg bg-zinc-800/80 border border-white/10 flex items-center gap-2">
+                        <Image className="w-4 h-4 text-sky-400 shrink-0" />
+                        <div><strong className="text-white">Cloudinary</strong>: Product Images</div>
+                      </div>
+                      <div className="p-2.5 rounded-lg bg-zinc-800/80 border border-white/10 flex items-center gap-2">
+                        <ShieldCheck className="w-4 h-4 text-amber-400 shrink-0" />
+                        <div><strong className="text-white">JWT</strong>: Role-Based Access</div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
                 {selectedProject.purpose && (
                   <div className="p-4 rounded-xl bg-zinc-900/90 border border-white/10">
                     <div className="font-mono text-xs uppercase text-sky-400 mb-1 font-semibold">Overview & Purpose</div>
@@ -507,6 +621,77 @@ export const Projects = () => {
                   <div className="p-4 rounded-xl bg-zinc-900/90 border border-white/10">
                     <div className="font-mono text-xs uppercase text-emerald-400 mb-1 font-semibold">Solution Implemented</div>
                     <p>{selectedProject.solution}</p>
+                  </div>
+                )}
+
+                {/* FABRICFLOW THREE ROLE MODULES */}
+                {selectedProject.buyerFeatures && (
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="p-4 rounded-xl bg-zinc-900/90 border border-white/10">
+                      <div className="font-mono text-xs uppercase text-sky-400 mb-2 font-bold flex items-center gap-1.5">
+                        <ShoppingBag className="w-4 h-4" /> Buyer Features
+                      </div>
+                      <ul className="space-y-1.5 text-xs text-zinc-300">
+                        {selectedProject.buyerFeatures.map((f, idx) => (
+                          <li key={idx} className="flex items-start gap-1.5">
+                            <span className="text-sky-400">•</span> <span>{f}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="p-4 rounded-xl bg-zinc-900/90 border border-white/10">
+                      <div className="font-mono text-xs uppercase text-amber-400 mb-2 font-bold flex items-center gap-1.5">
+                        <BarChart3 className="w-4 h-4" /> Supplier Features
+                      </div>
+                      <ul className="space-y-1.5 text-xs text-zinc-300">
+                        {selectedProject.supplierFeatures?.map((f, idx) => (
+                          <li key={idx} className="flex items-start gap-1.5">
+                            <span className="text-amber-400">•</span> <span>{f}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="p-4 rounded-xl bg-zinc-900/90 border border-white/10">
+                      <div className="font-mono text-xs uppercase text-emerald-400 mb-2 font-bold flex items-center gap-1.5">
+                        <UserCheck className="w-4 h-4" /> Admin Features
+                      </div>
+                      <ul className="space-y-1.5 text-xs text-zinc-300">
+                        {selectedProject.adminFeatures?.map((f, idx) => (
+                          <li key={idx} className="flex items-start gap-1.5">
+                            <span className="text-emerald-400">•</span> <span>{f}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                )}
+
+                {/* FABRICFLOW API MODULES & DB COLLECTIONS */}
+                {selectedProject.apiModules && (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="p-4 rounded-xl bg-zinc-900/90 border border-white/10">
+                      <div className="font-mono text-xs uppercase text-zinc-400 mb-2 font-semibold">REST API Modules</div>
+                      <div className="flex flex-wrap gap-1.5 font-mono text-[11px]">
+                        {selectedProject.apiModules.map((api) => (
+                          <span key={api} className="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-sky-300">
+                            {api}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="p-4 rounded-xl bg-zinc-900/90 border border-white/10">
+                      <div className="font-mono text-xs uppercase text-zinc-400 mb-2 font-semibold">MongoDB Atlas Collections</div>
+                      <div className="flex flex-wrap gap-1.5 font-mono text-[11px]">
+                        {selectedProject.dbCollections?.map((col) => (
+                          <span key={col} className="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-emerald-300">
+                            {col}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 )}
 

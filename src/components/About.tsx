@@ -11,7 +11,7 @@ const stats = [
     accent: "text-sky-400 border-sky-500/30"
   },
   {
-    value: "11+",
+    value: "12+",
     label: "Projects",
     subtext: "Real-World Applications",
     icon: FolderCode,
